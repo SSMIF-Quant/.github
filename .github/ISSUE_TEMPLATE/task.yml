@@ -1,0 +1,74 @@
+name: Task
+description: A standardized unit of work a lead hands off for an analyst to claim.
+title: "[Task]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the outcome and why it matters — leave the "how" to whoever picks this up.
+        Leave this issue **unassigned** so it's available to claim from the team board.
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      description: Rough effort gut-check, not a commitment.
+      options:
+        - "S"
+        - "M"
+        - "L"
+    validations:
+      required: true
+
+  - type: input
+    id: skills
+    attributes:
+      label: Skills
+      description: What background makes this a good fit (e.g. Python, pandas, options pricing).
+      placeholder: "Python, pandas"
+    validations:
+      required: false
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What outcome is wanted, not how to build it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What this feeds into (a report, another team's model, a live dashboard).
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Done looks like
+      description: Concrete, checkable criteria.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: start
+    attributes:
+      label: Starting point
+      description: Link to the relevant repo/folder/function, a paper, or a prior discussion.
+    validations:
+      required: false
+
+  - type: textarea
+    id: oos
+    attributes:
+      label: Out of scope
+      description: Optional — only if there's an obvious wrong turn worth heading off.
+    validations:
+      required: false
