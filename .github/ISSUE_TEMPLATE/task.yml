@@ -10,25 +10,16 @@ body:
         Leave this issue **unassigned** so it's available to claim from the team board.
 
   - type: dropdown
-    id: size
+    id: urgency
     attributes:
-      label: Size
-      description: Rough effort gut-check, not a commitment.
+      label: Urgency
+      description: How time-sensitive this is.
       options:
-        - "S"
-        - "M"
-        - "L"
+        - "Low"
+        - "Medium"
+        - "High"
     validations:
       required: true
-
-  - type: input
-    id: skills
-    attributes:
-      label: Skills
-      description: What background makes this a good fit (e.g. Python, pandas, options pricing).
-      placeholder: "Python, pandas"
-    validations:
-      required: false
 
   - type: textarea
     id: goal
@@ -58,17 +49,9 @@ body:
       required: true
 
   - type: textarea
-    id: start
+    id: notes
     attributes:
-      label: Starting point
-      description: Link to the relevant repo/folder/function, a paper, or a prior discussion.
-    validations:
-      required: false
-
-  - type: textarea
-    id: oos
-    attributes:
-      label: Out of scope
-      description: Optional — only if there's an obvious wrong turn worth heading off.
+      label: Extra notes
+      description: Optional — anything else worth flagging (context, links, an obvious wrong turn to avoid).
     validations:
       required: false
